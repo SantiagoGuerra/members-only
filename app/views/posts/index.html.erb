@@ -1,6 +1,10 @@
 <h1>Posts</h1>
 <ul>
-  <%=@posts.each do |post| %>
-    <%=post.title%>
+  <%@posts.each do |post| %>
+    <li>
+      <%= post.title %>
+      by: 
+      <%= User.find(post.user_id).name if logged_in?%>
+    </li>
   <%end%>
 </ul>
