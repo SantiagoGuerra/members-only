@@ -60,8 +60,6 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
     bcrypt (3.1.13)
-    bcrypt-ruby (3.1.5-x64-mingw32)
-      bcrypt (>= 3.1.3)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -208,7 +206,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bcrypt-ruby
+  bcrypt
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)

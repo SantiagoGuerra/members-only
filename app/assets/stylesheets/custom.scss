@@ -1,0 +1,16 @@
+.alert {
+
+
+  &-error {
+    padding: 16px;
+    border: 1px solid;
+    border-color: red;
+  }
+  
+  &-success {
+    padding: 16px;
+    border: 1px solid;
+    border-color: green;
+  }
+}
+

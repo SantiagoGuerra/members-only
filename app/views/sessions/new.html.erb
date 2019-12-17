@@ -1,2 +1,10 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+
+<%= form_with(url: signup_path, scope: :session) do |f|%>
+  <%= f.label :email, 'Your email' %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password, 'password' %>
+  <%= f.password_field :password %>
+
+  <%= f.submit %>
+<% end %>
