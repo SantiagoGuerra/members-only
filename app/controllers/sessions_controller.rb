@@ -9,9 +9,10 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to the user's show page.
       cookies.permanent[:user_id] = user.id
       cookies.permanent[:remember_token] = user.remember_token
+      log_in(true)
       flash[:success] = "Welcome!"
       redirect_to signup_path
-     
+
     else
       # Create an error message.
       flash[:error] = "Wrong combination"

@@ -9,4 +9,10 @@ module SessionsHelper
 
     return @current_user
   end
+  def logged_in(value=false)
+    return value
+  end
+
+
 end
+

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/index'
+  get 'posts/new'
 
   resources :users
+  resources :posts
 
 
   get '/signup', to: 'sessions#new'
