@@ -3,7 +3,7 @@
   <% if current_user %>
   <ul>
     <%= link_to(current_user.name, users_path(current_user))%>
-    <%= link_to('Create a post', posts_new_path)%>
+    <%= link_to('Create a post', new_post_path)%>
     <hr>
     <%= link_to('Sign out', signout_path, :method => :delete)%>
   </ul>
@@ -11,7 +11,5 @@
   <% end %>
 
 
-  <h2>
-    <%= logged_in? %>
-  </h2>
+  
 </header>

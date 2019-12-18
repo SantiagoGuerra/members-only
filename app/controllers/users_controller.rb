@@ -1,17 +1,23 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
 
   def new
     @user = User.new
+    @post = @user.posts
   end
 
-  def create 
+  def create
     @user = User.new(user_params)
 
     if @user.save
       flash[:success] = "Welcome #{params[:user][:name]}"
-      redirect_to posts_path
+      cookies.permanent[:user_id] = @user.id
+      cookies.permanent[:remember_token] = @user.remember_token
+      redirect_to users_path
     else
       render 'new'
     end

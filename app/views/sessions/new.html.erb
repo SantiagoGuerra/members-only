@@ -1,3 +1,6 @@
+<h2>
+  <%= link_to("Create an account", login_path) unless logged_in? %>
+</h2>
 
 <%= form_with(url: signup_path, scope: :session) do |f|%>
   <%= f.label :email, 'Your email' %>
