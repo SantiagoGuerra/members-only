@@ -11,7 +11,7 @@ class User < ApplicationRecord
     minimum: 4
   }
   validates :email, length: {
-    minimum: 6
+    minimum: 8
   }
 
   before_create { self.remember_token = Digest::SHA1.hexdigest SecureRandom.urlsafe_base64.to_s }

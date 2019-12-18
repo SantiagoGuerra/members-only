@@ -1,12 +1,8 @@
 # frozen_string_literal: true
 
 module SessionsHelper
-  attr_accessor :current_user
-
-  def current_user(_user = nil)
+  def current_user
     @current_user ||= User.find_by(id: cookies[:user_id]) if cookies[:user_id]
-
-    @current_user
   end
 
   def logged_in?

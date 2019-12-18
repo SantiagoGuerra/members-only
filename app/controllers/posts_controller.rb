@@ -2,7 +2,6 @@
 
 class PostsController < ApplicationController
   before_action :require_login, only: %i[new create]
-
   def new
     @post = Post.new
   end
@@ -29,9 +28,9 @@ class PostsController < ApplicationController
   end
 
   def require_login
-    unless logged_in?
-      flash[:error] = 'You must be logged in to access this section'
-      redirect_to signup_path
-    end
+    return if logged_in?
+
+    flash[:error] = 'You must be logged in to access this section'
+    redirect_to signup_path
   end
 end
