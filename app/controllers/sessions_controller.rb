@@ -11,11 +11,12 @@ class SessionsController < ApplicationController
       cookies.permanent[:user_id] = user.id
       cookies.permanent[:remember_token] = user.remember_token
       flash[:success] = 'Welcome!'
+      redirect_to posts_path
     else
       # Create an error message.
       flash[:error] = 'Wrong combination'
+      redirect_to signup_path
     end
-    redirect_to signup_path
   end
 
   def destroy
@@ -23,7 +24,5 @@ class SessionsController < ApplicationController
     cookies.delete :remember_token
 
     redirect_to signup_path
-
-    current_user = nil
   end
 end

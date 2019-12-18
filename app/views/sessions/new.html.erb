@@ -1,13 +1,22 @@
+<% if logged_in?%>
+
 <h2>
-  <%= link_to("Create an account", login_path) unless logged_in? %>
+  You already are logged
 </h2>
 
-<%= form_with(url: signup_path, scope: :session) do |f|%>
-  <%= f.label :email, 'Your email' %>
-  <%= f.email_field :email %>
+<% else %>
+  <h2>
+    <%= link_to("Create an account", login_path) unless logged_in? %>
+  </h2>
 
-  <%= f.label :password, 'password' %>
-  <%= f.password_field :password %>
+  <%= form_with(url: signup_path, scope: :session) do |f|%>
+    <%= f.label :email, 'Your email' %>
+    <%= f.email_field :email %>
 
-  <%= f.submit %>
+    <%= f.label :password, 'password' %>
+    <%= f.password_field :password %>
+
+    <%= f.submit %>
+  <% end %>
+
 <% end %>
