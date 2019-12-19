@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
       cookies.permanent[:user_id] = user.id
-      cookies.permanent[:remember_token] = user.remember_token
+      remember_token = User.generate_unique_secure_token
+      user.update_attribute(:remember_token, remember_token)
+      cookies.permanent[:remember_token] = remember_token
       flash[:success] = 'Welcome!'
       redirect_to posts_path
     else
@@ -22,7 +24,7 @@ class SessionsController < ApplicationController
   def destroy
     cookies.delete :user_id
     cookies.delete :remember_token
-
+    @current_user = nil
     redirect_to signup_path
   end
 end
