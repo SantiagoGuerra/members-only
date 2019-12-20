@@ -1,0 +1,15 @@
+<header>
+
+  <% if current_user %>
+  <ul>
+    <%= link_to(current_user.name, users_path(current_user))%> | 
+    <%= link_to('Create a post', new_post_path)%> | 
+    <%= link_to('All posts', posts_path)%> 
+
+    <hr>
+    <%= link_to('Sign out', signout_path, :method => :delete)%>
+  </ul>
+
+  <% end %>
+
+</header>

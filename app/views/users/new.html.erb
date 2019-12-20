@@ -1,0 +1,36 @@
+<h1>
+  Create your user
+</h1>
+
+
+
+<p>
+  Already an user? <%= link_to("Sign up", signup_path) unless logged_in? %>
+</p>
+
+
+<%= form_with(model: @user, local: true) do |f| %>
+  <ul>
+    <%@user.errors.full_messages.each do |message|%>
+      <li class="color-red">
+        <%= message %>
+      </li>
+    <% end %>
+  </ul>
+    
+
+
+    <%= f.label :name %>
+    <%= f.text_field :name%><br>
+
+    <%= f.label :email %>
+    <%= f.email_field :email%><br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+
+    <%= f.label :password_confirmation %> 
+    <%= f.password_field :password_confirmation %><br>
+
+    <%= f.submit%>
+<% end %>

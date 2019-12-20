@@ -1,0 +1,15 @@
+<h1>  
+  <%=@post.title %>
+</h1>
+
+<p>
+  <%= @post.content %>
+</p>
+
+<p>
+  <% if logged_in?%>
+  <%= User.find_by(id: @post.user_id).name %>
+  <% else %>
+    You need to <%=link_to('log in', login_path) %> to see the author
+  <% end %>
+</p>
