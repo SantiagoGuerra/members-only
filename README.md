@@ -76,7 +76,7 @@ This project was built using these technologies.
 <!-- CONTACT -->
 ## Contact
 
-Gaston Costa - [@lhscar56](https://github.com/lhscar56) - gac056@gmail.com
+Gaston Costa - [@gagc056@gmail.com](https://github.com/gagc056) - gac056@gmail.com
 Santiago Guerra - [@SantiagoGuerra](https://github.com/SantiagoGuerra) - guerrasantiago19@gmail.com
 
 Project Link: [https://github.com/SantiagoGuerra/memebers-only)
